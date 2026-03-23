@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<h1>🧠 AI Puzzle Dashboard</h1>
+<button onclick="logout()">Logout</button>
+
+<div class="container">
+
+<select id="mode" onchange="init()">
+  <option value="3">8-Puzzle</option>
+  <option value="4">15-Puzzle</option>
+</select>
+
+<div id="grid" class="grid"></div>
+
+<button onclick="shuffle()">Shuffle</button>
+<button onclick="autoSolve()">Auto Solve</button>
+<button onclick="solve('BFS')">BFS</button>
+<button onclick="solve('DFS')">DFS</button>
+<button onclick="solve('A*')">A*</button>
+
+<div id="stats">
+  Steps: <span id="steps">0</span> |
+  Time: <span id="time">0</span> ms
+</div>
+
+<!-- ✅ FIXED: Chart Added -->
+<canvas id="chart" height="150"></canvas>
+
+</div>
+
+<script src="script.js"></script>
+<script src="auth.js"></script>
+
+</body>
+</html>
